@@ -1,0 +1,475 @@
+/* SITE BY ORUJ SHARIFLI */
+:root {
+    --white: #fff;
+    --gray-nurse: #f5f7F4;
+    --seashell: #f1f1f1;
+    --tutu: #fff9fc;
+    --tangerine: #e29302;
+    --dove-gray: #666;
+    --red: #ff0000;
+    --bunker: #0d131a;
+    --black: #000000;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    outline: none;
+    text-decoration: none;
+    font-family: AvertaRegular;
+    transition: .3s linear;
+}
+
+/* Fonts */
+@font-face {
+    font-family: AvertaRegular;
+    src: url(/assets/fonts/Averta-Regular.woff2) format("opentype");
+}
+
+/* a tag */
+a {
+    text-decoration: none;
+}
+
+/* Image user select none */
+img {
+    user-select: none;
+}
+
+/* Webkit */
+::-webkit-scrollbar {
+    width: 7px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--tutu);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--bunker);
+}
+
+/* Body */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    color: var(--bunker);
+}
+
+/* Pre Loader */
+.preloader {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 4;
+    background: var(--white);
+}
+
+.preloader img {
+    width: 200px;
+}
+
+/* Scroll Back To Top Button */
+.go-to-top {
+    display: none;
+    width: 40px;
+    height: 40px;
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    z-index: 3;
+    font-size: 18px;
+    border: none;
+    outline: none;
+    background: var(--tangerine);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+}
+
+.go-to-top i {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    color: var(--white);
+}
+
+/* Navbar */
+.navbar-wr {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    background: var(--bunker);
+    border-bottom: 3px solid var(--tangerine);
+}
+
+/* Underline hover */
+.underline-hover {
+    width: fit-content;
+}
+
+.underline-hover::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: -5px;
+    left: 0;
+    background: var(--white);
+    transform-origin: bottom right;
+    transition: transform 0.25s ease-out;
+}
+
+.underline-hover:hover:after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Desktop social media links */
+.social-link {
+    width: 34px;
+    height: 34px;
+    color: white;
+    border-radius: 50%;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+.social-link:hover {
+    background: var(--white);
+    color: var(--bunker);
+}
+
+/* Buttons */
+.dark-btn {
+    color: var(--white);
+    border-radius: 25px;
+    background: var(--bunker);
+    border: 1px solid var(--white);
+    padding: 12px 50px;
+    text-align: center;
+}
+
+.dark-btn:hover {
+    color: var(--bunker);
+    background: var(--white);
+    border-color: var(--bunker);
+}
+
+/* Hamburger icon */
+.menu-icon {
+    gap: 6px;
+    cursor: pointer;
+}
+
+.bar1,
+.bar2,
+.bar3 {
+    width: 35px;
+    height: 5px;
+    background: var(--white);
+    transition: .4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-9px, 6px);
+    transform: rotate(-45deg) translate(-9px, 6px);
+}
+
+.change .bar2 {
+    opacity: 0;
+}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-8px, -8px);
+    transform: rotate(45deg) translate(-8px, -8px);
+}
+
+/* Nav Mobile */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100vh;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 2;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 250ms ease;
+    -webkit-transition: all 250ms ease;
+}
+
+.active {
+    left: 0;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu-wr {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    background: var(--bunker);
+    border-right: 3px solid var(--white);
+    background-image: url(/assets/img/backgrounds/nav-menu-bg.png);
+    min-height: 100vh;
+    padding-bottom: 25px;
+    margin-right: auto;
+}
+
+/* Navbar mobile menu header */
+.menu-header {
+    width: 90%;
+}
+
+.menu-header a img {
+    height: 40px;
+}
+
+.x-mark {
+    cursor: pointer;
+}
+
+/* Banner area */
+.banner-area {
+    background-image: url(/assets/img/backgrounds/banner-bg.webp);
+}
+
+/* Background cover */
+.background-cover {
+    background-size: cover;
+}
+
+/* Container text */
+.banner-area h1 {
+    border-left: 3px solid var(--tangerine);
+}
+
+/* Transparent button */
+.white-btn {
+    color: var(--bunker) !important;
+    font-size: 18px;
+}
+
+.white-btn:hover {
+    opacity: .8;
+}
+
+/* Banner area rounded circle image */
+.py-lg .rounded-circle {
+    border-bottom: 5px solid var(--tangerine);
+}
+
+/* About */
+.about-area {
+    background-image: url(/assets/img/backgrounds/about-bg.jpg);
+}
+
+/* Text indent */
+.fa-minus {
+    color: var(--tangerine);
+}
+
+/* Workplace slider */
+.workplace {
+    background-image: url(/assets/img/backgrounds/workplaces-bg.webp);
+}
+
+.slider:hover {
+    cursor: grab;
+}
+
+.slider:active {
+    cursor: grabbing;
+}
+
+.slick-prev,
+.slick-next {
+    display: none !important;
+}
+
+.slick-dots li.slick-active button:before {
+    color: var(--tangerine);
+}
+
+.section-title i {
+    position: absolute;
+    color: var(--tangerine);
+    font-size: 25px;
+    margin-left: 8px;
+}
+
+.slider .slick-track {
+    display: flex;
+    align-items: center;
+}
+
+.slick-dots {
+    bottom: -40px;
+}
+
+/* Services */
+.services {
+    background-image: url(/assets/img/backgrounds/services.jpg);
+}
+
+.services h4 {
+    font-size: 20px;
+    width: 150px;
+}
+
+/* Facts area */
+.facts-area {
+    background: var(--bunker);
+    color: var(--white);
+}
+
+.y-tangerine-border {
+    border-top: 3px solid var(--tangerine);
+    border-bottom: 3px solid var(--tangerine);
+}
+
+/* Blogs */
+.blogs {
+    background-image: url(/assets/img/backgrounds/blogs-bg.jpg);
+}
+
+.blogs-slider a {
+    color: var(--bunker);
+}
+
+.blogs-slider a:hover h4,
+.blogs-slider a:hover p {
+    opacity: .85;
+}
+
+.blogs-slider a img {
+    border-radius: 25px;
+}
+
+/* Contact us */
+.contact-me {
+    background-image: url(/assets/img/backgrounds/contact-me-bg.jpg);
+}
+
+.contact-me input[type="text"],
+.contact-me input[type="number"],
+.contact-me input[type="tel"] {
+    padding: 15px 40px;
+    background: var(--gray-nurse);
+    border: 1px solid transparent;
+    border-radius: 25px;
+    width: 100%;
+}
+
+.contact-me input[type="text"]:focus,
+.contact-me input[type="number"]:focus,
+.contact-me input[type="tel"]:focus {
+    border: 1px solid var(--bunker);
+}
+
+.phone-validation.valid-error #phone-number {
+    border: 1px solid var(--red);
+}
+
+.ph-error {
+    display: none;
+}
+
+.phone-validation.valid-error .ph-error {
+    display: block;
+    color: var(--red);
+    font-size: 14px;
+}
+
+.checks input[type="radio"],
+.checks input[type="checkbox"],
+.calc-checkbox input,
+.contact-me input[type="checkbox"] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    display: inline-block;
+    position: relative;
+    background: var(--seashell);
+    color: var(--dove-gray);
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-right: 7px;
+    outline: none;
+}
+
+.checks input[type="radio"]:checked,
+.checks input[type="checkbox"]:checked,
+.calc-checkbox input:checked,
+.contact-me input[type="checkbox"]:checked {
+    color: var(--white);
+    background: var(--bunker);
+}
+
+.checks input[type="radio"]:checked::before,
+.checks input[type="checkbox"]:checked::before,
+.calc-checkbox input:checked::before,
+.contact-me input[type="checkbox"]:checked::before {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    -moz-transform: translateX(-50%) translateY(-50%);
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    content: "\f00c";
+}
+
+/* Feedbacks */
+.feedbacks {
+    background-image: url(/assets/img/backgrounds/feedbacks-bg.jpg);
+}
+
+.card {
+    border-radius: 25px;
+}
+
+/* Call to action */
+.call-to-action-content {
+    background: var(--bunker);
+    background-image: url(/assets/img/backgrounds/call-to-action-bg.png);
+    background-repeat: no-repeat;
+    background-position: 30%;
+}
+
+/* Footer */
+.footer-wr {
+    background: var(--bunker);
+    border-top: 3px solid var(--tangerine);
+}
+
+/* MEDIA QUERY */
+/* Additional Responsive Code */
+@media (min-width:992px) {
+    .py-lg {
+        padding: 100px 0 !important;
+    }
+}
+
+/* SITE BY ORUJ SHARIFLI */
